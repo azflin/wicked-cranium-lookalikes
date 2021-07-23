@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { Container, Button, Col, Row } from 'react-bootstrap'
+import { Container, Col, Row } from 'react-bootstrap'
 const craniums = require('./cranium_array.json');
 
 function App() {
@@ -14,9 +14,11 @@ function App() {
     let bestMatches = [];
     let matchingTraits = [];
     for (let i=0; i<craniums.length; i++) {
-      matchingTraits.push(cranium.reduce((accumulator, currentValue, j) => accumulator + (currentValue.value === craniums[i][j].value), 0));
+      // Disregard the first attribute, which is background
+      matchingTraits.push(cranium.slice(1,6).reduce((accumulator, currentValue, j) => accumulator + (currentValue.value === craniums[i][j+1].value), 0));
     }
-    let numMatchingTraits = 5;
+    // At most 4 traits can match (5 traits would just be the same cranium)
+    let numMatchingTraits = 4;
     while (bestMatches.length < 10) {
       bestMatches.push(...indexOfAll(matchingTraits, numMatchingTraits));
       numMatchingTraits -= 1;
@@ -44,6 +46,7 @@ function App() {
             </div>
             <h3>Look a Likes:</h3>
             {lookalikesHtml}
+            <br></br><br></br>
           </Col>
         </Row>
       </Container>
