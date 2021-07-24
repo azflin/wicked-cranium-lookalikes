@@ -1,12 +1,15 @@
 import './App.css';
+import './styles.scss';
 import React, { useState, useEffect } from 'react';
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container, Col, Row } from 'react-bootstrap';
+import RenderSmoothImage from './RenderSmoothImage'
 const craniums = require('./cranium_array.json');
 
 function App() {
 
   const [tokenId, setTokenId] = useState(Math.floor(Math.random() * 10762));
   const [lookalikes, setLookalikes] = useState([]);
+  const [mainImageLoaded, setMainImageLoaded] = useState(false);
 
   function findLookAlikes(tokenId) {
     const cranium = craniums[tokenId];
@@ -28,10 +31,11 @@ function App() {
 
   useEffect(() => {
     if (tokenId) findLookAlikes(tokenId);
+    setMainImageLoaded(false);
   }, [tokenId])
 
   const lookalikesHtml = lookalikes.map((lookalike) =>
-    <img key={lookalike} className="cranium-image m-1" src={process.env.PUBLIC_URL + '/craniums/' + lookalike + '.png'} alt={lookalike}></img>
+    <RenderSmoothImage key={lookalike} src={process.env.PUBLIC_URL + '/craniums/' + lookalike + '.png'} alt={lookalike}></RenderSmoothImage>
   )
 
   return (
@@ -42,10 +46,16 @@ function App() {
             <h1>Find your Wicked Cranium's Look-alikes!</h1>
             <input type="number" placeholder="Cranium ID" value={tokenId} onChange={(event) => {setTokenId(event.target.value)}}></input>
             <div>
-              {tokenId && <img id="main-cranium" src={process.env.PUBLIC_URL + '/craniums/' + tokenId + '.png'} alt={tokenId}></img>}
+              {tokenId &&
+                <img
+                  id="main-cranium"
+                  src={process.env.PUBLIC_URL + '/craniums/' + tokenId + '.png'}
+                  alt={tokenId}
+                  onLoad={() => setMainImageLoaded(true)}>
+                </img>}
             </div>
             <h3>Look a Likes:</h3>
-            {lookalikesHtml}
+            {mainImageLoaded && lookalikesHtml}
             <br></br><br></br>
           </Col>
         </Row>

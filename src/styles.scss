@@ -1,0 +1,57 @@
+// styles.scss
+
+.fullSize {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.smooth-image-wrapper {
+  @extend .fullSize;
+  // position: relative;
+  .smooth-image {
+    transition: opacity 1s;
+    @extend .fullSize;
+  }
+
+  .smooth-no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @extend .fullSize;
+    background-color: #fcfcfc;
+    text-transform: capitalize;
+  }
+
+  .img-visible {
+    opacity: 1;
+  }
+
+  .img-hidden {
+    opacity: 0;
+  }
+
+  @keyframes preloader-block {
+    from {
+      background-position: 0%, 0;
+    }
+    to {
+      background-position: 170%, 0;
+    }
+  }
+
+  .smooth-preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend .fullSize;
+    background: rgba(245, 245, 245, 0.34);
+    .loader {
+      background-image: linear-gradient(to right, #e6e6e6, #ffffff, #e6e6e660);
+      @extend .fullSize;
+      // display: inline-block;
+      background-size: 200%;
+      animation: preloader-block 2s linear 0s infinite reverse forwards;
+    }
+  }
+}
