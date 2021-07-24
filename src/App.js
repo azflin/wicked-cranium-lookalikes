@@ -31,7 +31,7 @@ function App() {
   }, [tokenId])
 
   const lookalikesHtml = lookalikes.map((lookalike) =>
-    <img src={process.env.PUBLIC_URL + '/craniums/' + lookalike + '.png'} style={{width: '250px', height: 'auto'}} alt="Loading"></img>
+    <img key={lookalike} className="cranium-image m-1" src={process.env.PUBLIC_URL + '/craniums/' + lookalike + '.png'} alt={lookalike}></img>
   )
 
   return (
@@ -42,7 +42,7 @@ function App() {
             <h1>Find your Wicked Cranium's Look-alikes!</h1>
             <input type="number" placeholder="Cranium ID" value={tokenId} onChange={(event) => {setTokenId(event.target.value)}}></input>
             <div>
-              {tokenId && <img src={process.env.PUBLIC_URL + '/craniums/' + tokenId + '.png'} style={{width: '400px', height: 'auto'}} alt="Loading"></img>}
+              {tokenId && <img id="main-cranium" src={process.env.PUBLIC_URL + '/craniums/' + tokenId + '.png'} alt={tokenId}></img>}
             </div>
             <h3>Look a Likes:</h3>
             {lookalikesHtml}
