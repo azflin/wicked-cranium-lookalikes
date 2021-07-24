@@ -33,7 +33,7 @@ function App() {
   }, [tokenId])
 
   const lookalikesHtml = lookalikes.map((lookalike) =>
-    <RenderSmoothImage key={lookalike} src={process.env.PUBLIC_URL + '/craniums/' + lookalike + '.png'} alt={lookalike}></RenderSmoothImage>
+    <RenderSmoothImage key={lookalike} src={process.env.PUBLIC_URL + '/craniums/' + lookalike + '.png'} alt={lookalike} title={lookalike}></RenderSmoothImage>
   )
 
   return (
@@ -53,7 +53,7 @@ function App() {
               </div>
               <div>
                 <h3>All craniums are unique, but some are wickedly similar...</h3>
-                <label for="tokenIdInput">Token ID:&nbsp;</label>
+                <label htmlFor="tokenIdInput">Token ID:&nbsp;</label>
                 <input id="tokenIdInput" type="number" placeholder="Cranium ID" value={tokenId} onChange={(event) => {setTokenId(event.target.value)}}></input>
               </div>
             </div>

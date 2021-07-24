@@ -1,7 +1,7 @@
 import React from "react";
 import './App.scss';
 
-const RenderSmoothImage = ({ src, alt = "notFound", objectFit = "contain" }) => {
+const RenderSmoothImage = ({ src, alt = "notFound", objectFit = "contain", title }) => {
   const [imageLoaded, setImageLoaded] = React.useState(false);
   const [isValidSrc, setIsValidSrc] = React.useState(!!src);
 
@@ -10,6 +10,7 @@ const RenderSmoothImage = ({ src, alt = "notFound", objectFit = "contain" }) => 
       {isValidSrc ? (
         <img
           className={`smooth-image img-${imageLoaded ? "visible" : "hidden"} m-1`}
+          title={title}
           style={{ objectFit }}
           src={src}
           alt={alt}
