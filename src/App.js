@@ -41,19 +41,26 @@ function App() {
       <Container>
         <Row>
           <Col>
-            <h1>Find your Wicked Cranium's Look-alikes!</h1>
-            <input type="number" placeholder="Cranium ID" value={tokenId} onChange={(event) => {setTokenId(event.target.value)}}></input>
-            <div>
-              {tokenId &&
-                <img
-                  id="main-cranium"
-                  src={process.env.PUBLIC_URL + '/craniums/' + tokenId + '.png'}
-                  alt={tokenId}
-                  onLoad={() => setMainImageLoaded(true)}>
-                </img>}
+            <div id="cranium-selector" className="mt-2">
+              <div>
+                {tokenId &&
+                  <img className="me-3"
+                    id="main-cranium"
+                    src={process.env.PUBLIC_URL + '/craniums/' + tokenId + '.png'}
+                    alt={tokenId}
+                    onLoad={() => setMainImageLoaded(true)}>
+                  </img>}
+              </div>
+              <div>
+                <h3>All craniums are unique, but some are wickedly similar...</h3>
+                <label for="tokenIdInput">Token ID:&nbsp;</label>
+                <input id="tokenIdInput" type="number" placeholder="Cranium ID" value={tokenId} onChange={(event) => {setTokenId(event.target.value)}}></input>
+              </div>
             </div>
-            <h3>Look a Likes:</h3>
-            {mainImageLoaded && lookalikesHtml}
+            <div>
+              <br></br>
+              {mainImageLoaded && lookalikesHtml}
+            </div>
             <br></br><br></br>
           </Col>
         </Row>
