@@ -1,5 +1,3 @@
-import './App.css';
-import './styles.scss';
 import React, { useState, useEffect } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import RenderSmoothImage from './RenderSmoothImage'

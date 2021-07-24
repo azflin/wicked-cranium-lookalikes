@@ -1,5 +1,5 @@
 import React from "react";
-import './styles.scss';
+import './App.scss';
 
 const RenderSmoothImage = ({ src, alt = "notFound", objectFit = "contain" }) => {
   const [imageLoaded, setImageLoaded] = React.useState(false);
