@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/wicked-cranium-lookalikes/static/css/main.7fee7eff.chunk.css",
+    "main.js": "/wicked-cranium-lookalikes/static/js/main.2680c4b9.chunk.js",
+    "main.js.map": "/wicked-cranium-lookalikes/static/js/main.2680c4b9.chunk.js.map",
+    "runtime-main.js": "/wicked-cranium-lookalikes/static/js/runtime-main.439f748c.js",
+    "runtime-main.js.map": "/wicked-cranium-lookalikes/static/js/runtime-main.439f748c.js.map",
+    "static/css/2.3ab4f688.chunk.css": "/wicked-cranium-lookalikes/static/css/2.3ab4f688.chunk.css",
+    "static/js/2.455d5040.chunk.js": "/wicked-cranium-lookalikes/static/js/2.455d5040.chunk.js",
+    "static/js/2.455d5040.chunk.js.map": "/wicked-cranium-lookalikes/static/js/2.455d5040.chunk.js.map",
+    "static/js/3.fb1465da.chunk.js": "/wicked-cranium-lookalikes/static/js/3.fb1465da.chunk.js",
+    "static/js/3.fb1465da.chunk.js.map": "/wicked-cranium-lookalikes/static/js/3.fb1465da.chunk.js.map",
+    "index.html": "/wicked-cranium-lookalikes/index.html",
+    "static/css/2.3ab4f688.chunk.css.map": "/wicked-cranium-lookalikes/static/css/2.3ab4f688.chunk.css.map",
+    "static/css/main.7fee7eff.chunk.css.map": "/wicked-cranium-lookalikes/static/css/main.7fee7eff.chunk.css.map",
+    "static/js/2.455d5040.chunk.js.LICENSE.txt": "/wicked-cranium-lookalikes/static/js/2.455d5040.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.439f748c.js",
+    "static/css/2.3ab4f688.chunk.css",
+    "static/js/2.455d5040.chunk.js",
+    "static/css/main.7fee7eff.chunk.css",
+    "static/js/main.2680c4b9.chunk.js"
+  ]
+}
