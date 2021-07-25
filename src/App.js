@@ -52,11 +52,12 @@ function App() {
                   </img>}
               </div>
               <div>
-                <h3>All craniums are unique, but some are wickedly similar...</h3>
-                <label htmlFor="tokenIdInput">Token ID:&nbsp;</label>
+                <h2 style={{color: "white"}}><strong>All craniums are unique, but some are wickedly similar...</strong></h2>
+                <label htmlFor="tokenIdInput" style={{color: "white"}}>Token ID:&nbsp;</label>
                 <input id="tokenIdInput" type="number" placeholder="Cranium ID" value={tokenId} onChange={(event) => {setTokenId(event.target.value)}}></input>
               </div>
             </div>
+            {/* The look alikes */}
             <div>
               <br></br>
               {mainImageLoaded && lookalikesHtml}
