@@ -42,6 +42,7 @@ function App() {
         <Row>
           <Col>
             <div id="cranium-selector" className="mt-2">
+              {/* Main cranium image */}
               <div>
                 {tokenId &&
                   <img className="me-3"
@@ -51,10 +52,11 @@ function App() {
                     onLoad={() => setMainImageLoaded(true)}>
                   </img>}
               </div>
+              {/* Header and input to select token id */}
               <div>
                 <h2 style={{color: "white"}}><strong>All craniums are unique, but some are wickedly similar...</strong></h2>
                 <label htmlFor="tokenIdInput" style={{color: "white"}}>Token ID:&nbsp;</label>
-                <input id="tokenIdInput" type="number" placeholder="Cranium ID" value={tokenId} onChange={(event) => {setTokenId(event.target.value)}}></input>
+                <input id="tokenIdInput" type="number" placeholder="Cranium ID" value={tokenId} onChange={(event) => { setTokenId(Math.min(event.target.value, 10761))}}></input>
               </div>
             </div>
             {/* The look alikes */}
